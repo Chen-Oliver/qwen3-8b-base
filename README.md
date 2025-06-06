@@ -1,6 +1,6 @@
 # Qwen3-8B-Base
 
-A simple from scratch PyTorch implementation of the `Qwen/Qwen3-8B-Base` model, using pre-trained weights from [Hugging Face](https://huggingface.co/Qwen/Qwen3-8B).
+A simple from scratch PyTorch implementation of the `Qwen/Qwen3-8B-Base` model, using pre-trained weights from [Hugging Face](https://huggingface.co/Qwen/Qwen3-8B-Base).
 
 ## Getting Started
 
