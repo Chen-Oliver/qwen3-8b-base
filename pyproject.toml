@@ -1,0 +1,17 @@
+[project]
+name = "qwen3-8b-base"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.7.0",
+    "torch>=2.7.1",
+    "transformers>=4.52.4",
+]
+
+[dependency-groups]
+dev = [
+    "isort>=6.0.1",
+    "ruff>=0.11.13",
+]
