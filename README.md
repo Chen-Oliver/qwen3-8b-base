@@ -23,10 +23,17 @@ uv run model.py
 ```
 This will run both greedy and sampling-based generation and print the output to the console.
 
+## Architecture
+- The Qwen3 line of models contains both Dense and Mixture of Expert Models. All models in this line utilize Grouped Query Attention.
+- Qwen3-8B, like its smaller siblings (0.6B, 1.7B, 4B) is a dense model but one difference is that it doesn't utilize tie embedding.
+- Qwen3 differs from Qwen2 in that it no longer uses a QKV bias and opts for a QK normalization step before applying attention. This is similar to the QK-norm used in [OlMo2](https://arxiv.org/pdf/2501.00656) but the norm is shared across the heads.
+
+
 ## Known Limitations
 This is a simplified implementation and lacks many optimizations.
 -  No batch support: single-prompt inference only
 -  No KV Cache
+-  No RoPE scaling
 -  Precision differences
     - The [Huggingface implementation](https://github.com/huggingface/transformers/blob/main/src/transformers/models/qwen3/modeling_qwen3.py#L51) uses a custom RMSNorm kernel that leads to slight precision differences with this implementation.
 
@@ -110,3 +117,8 @@ Factor x^10 - y^2.
 Weegy Stuff
 ```
 
+## References
+
+- [Qwen3 Technical Report](https://arxiv.org/pdf/2505.09388v1)
+- [Qwen3 Blog](https://qwenlm.github.io/blog/qwen3/)
+- [HF Transformers](https://github.com/huggingface/transformers/blob/main/src/transformers/models/qwen3/modeling_qwen3.py)
