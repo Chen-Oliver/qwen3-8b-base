@@ -14,6 +14,7 @@ A simple from scratch PyTorch implementation of the `Qwen/Qwen3-8B-Base` model, 
 2.  **Model Weights:** You'll need the `config.json` and the model weights for `Qwen/Qwen3-8B-Base`. You can download them from the [Hugging Face Hub](https://huggingface.co/Qwen/Qwen3-8B-Base).
     - Place `config.json` in the project root. There is already one included in this repo.
     - Download and place the model weight files (e.g., `.safetensors` and `model.safetensors.index.json`) into a `qwen3_weights/` directory.
+    - Note: The weights for Qwen3-8B (instruct model) can also be loaded but inference will not work properly as the chat template is not implemented.
 
 ### Running the Example
 
